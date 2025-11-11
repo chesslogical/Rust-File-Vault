@@ -1,3 +1,4 @@
+#![allow(deprecated)]
 use aes_gcm::{
     aead::{Aead, KeyInit, OsRng},
     Aes256Gcm, Nonce,
