@@ -1,0 +1,11 @@
+[package]
+name = "file_vault"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+aes-gcm = "0.10"
+argon2 = "0.5"
+rand = "0.8"
+rpassword = "7.3"
+zeroize = "1.7"
