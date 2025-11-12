@@ -54,6 +54,16 @@ The compiled binary will be located at:
 - `target/release/file_vault` (Linux/macOS)
 - `target\release\file_vault.exe` (Windows)
 
+### Alternative: Install Directly with Cargo
+```
+cargo install --git https://github.com/harrymoorheadtaylor/Rust-File-Vault
+```
+
+Once installed run it anywhere using:
+```
+file_vault
+```
+
 ## Usage
 
 Run the programme from the project directory:
