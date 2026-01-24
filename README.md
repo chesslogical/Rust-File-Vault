@@ -30,8 +30,6 @@ Encrypted files use the following structure:
 [32 bytes: Salt] + [12 bytes: Nonce] + [Variable: Ciphertext + Auth Tag]
 ```
 
-This allows secure decryption whilst maintaining cryptographic best practices.
-
 ## Installation
 
 ### Prerequisites
@@ -186,18 +184,8 @@ All cryptographic implementations are from the [RustCrypto](https://github.com/R
 
 - Files must be small enough to fit in memory (both plaintext and ciphertext)
 - Encrypted filenames reveal original filename and extension
-- No password recovery mechanism (by design)
-- Terminal-only interface (no GUI)
-
-## Future Enhancements
-
-Potential improvements for future versions:
-- Streaming encryption for large files
-- Optional filename encryption
-- Multiple password attempts with lockout
-- Vault password management
-- Cross-platform file browser integration
-
+- No password recovery mechanism
+  
 ## Licence
 
 MIT Licence - See LICENSE file for details
@@ -211,4 +199,3 @@ GitHub: [@harrymoorheadtaylor](https://github.com/harrymoorheadtaylor)
 ## Acknowledgements
 
 - [RustCrypto](https://github.com/RustCrypto) for cryptographic implementations
-- Rust community for excellent documentation and libraries
