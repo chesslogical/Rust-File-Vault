@@ -1,3 +1,7 @@
+
+my fork changed a couple minor things. Here is the original readme 
+
+
 # Encrypted File Vault
 
 A secure command-line file encryption tool built in Rust, implementing AES-256-GCM encryption with Argon2 key derivation for password-based file protection.
