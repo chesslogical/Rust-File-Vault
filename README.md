@@ -1,5 +1,7 @@
 # things this fork changed
 
+Don't thank me tho, thank chatgpt :) 
+
 File overwrite / path traversal: The original program used filenames from the vault directly when decrypting, which could allow malicious files to overwrite important system files. In the fixed version, all filenames are passed through a sanitize_filename function, which extracts only the base name and rejects any path separators. This ensures decrypted files are saved safely in the current directory and cannot escape the vault.
 
 Large file memory crash: Originally, the program loaded entire files into memory for encryption and decryption, which could crash the program with very large files. In the fixed version, a check_file_size function was added to reject files over 100 MB. This does not implement full streaming, but it prevents crashes or freezes due to extremely large files.
