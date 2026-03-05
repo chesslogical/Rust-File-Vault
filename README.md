@@ -1,6 +1,16 @@
+things this fork changed
+File overwrite / path traversal: The original program used filenames from the vault directly when decrypting, which could allow malicious files to overwrite important system files. In the fixed version, all filenames are passed through a sanitize_filename function, which extracts only the base name and rejects any path separators. This ensures decrypted files are saved safely in the current directory and cannot escape the vault.
 
-my fork changed a couple minor things. Here is the original readme 
+Large file memory crash: Originally, the program loaded entire files into memory for encryption and decryption, which could crash the program with very large files. In the fixed version, a check_file_size function was added to reject files over 100 MB. This does not implement full streaming, but it prevents crashes or freezes due to extremely large files.
 
+Weak password-hashing configuration: The original code used Argon2::default() for key derivation, which could be weak against brute-force attacks. The fixed version replaces this with an explicit Argon2id configuration: 64 MB memory cost, 3 iterations, 1 parallelism thread, and 32-byte output. This makes offline password guessing significantly harder without changing how the user interacts with the program.
+
+
+
+
+
+
+# original readme follows 
 
 # Encrypted File Vault
 
